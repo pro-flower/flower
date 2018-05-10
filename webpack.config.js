@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  //path.resolve拼接\解析路径专用包
   entry: path.resolve(__dirname, 'src/librarys/app/app.ts'),
   output: {
     filename: '[name].min.js',
