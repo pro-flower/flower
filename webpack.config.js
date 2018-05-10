@@ -1,11 +1,11 @@
 const webpack=require('webpack');
 module.exports={
     entry: {
-        "app":"./src/"
+        "app":"./src/librarys/app.ts"
     },
     output: {
         filename: "[name].min.js",
-        path: _dirname+"/dits/js"
+        path: __dirname+"/dits/js"
     },
     module: {
         rules: [
