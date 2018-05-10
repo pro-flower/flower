@@ -19,9 +19,6 @@
   "homepage": "https://github.com/pro-flower/flower#readme",
   "dependencies": {
     "echarts": "^4.1.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "ts-loader": "^4.3.0",
     "typescript": "^2.8.3"
   },
   "devDependencies": {
@@ -29,6 +26,9 @@
     "css-loader": "^0.28.11",
     "postcss-loader": "^2.1.5",
     "style-loader": "^0.21.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "ts-loader": "^4.3.0",
     "webpack": "^4.8.1"
   }
 }
