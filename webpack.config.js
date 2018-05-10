@@ -20,7 +20,7 @@ module.exports={
         ]
     },
     resolve: {
-        extensions: ['.ts','.js','.stylus']
+        extensions: ['.ts','.js','.styl']  //模块解析
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
