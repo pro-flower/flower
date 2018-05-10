@@ -14,13 +14,13 @@ module.exports={
                 use: "ts-loader"
             },
             {
-                test:[/\.css$/,/\.stylus/],
+                test:/\.styl$/,
                 use: ['style-loader','css-loader','stylus-loader']
             }
         ]
     },
     resolve: {
-        extensions: ['.ts','.js','.stylus']
+        extensions: ['.ts','.js','.styl']
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
