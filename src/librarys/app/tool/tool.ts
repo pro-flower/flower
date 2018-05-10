@@ -53,6 +53,17 @@ class Tool {
         }
         return arrTemp;
     };
+    //创建元素
+    createElement=(str:string):HTMLElement=>document.createElement(str);
+
+    //寻找class元素
+    getClass=(str:string):NodeList=>document.getElementsByClassName(str);
+
+    //寻找id元素
+    getId=(str:string):HTMLElement=>document.getElementById(str);
+
+    //寻找标签元素
+    getTarget=(str:string):NodeList=>document.getElementsByTagName(str);
 }
 
 export const tool =new Tool();
