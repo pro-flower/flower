@@ -1,7 +1,7 @@
 const webpack=require('webpack');
 module.exports={
     entry: {
-        "app":"./src/librarys/app.ts"
+        "app":"./src/librarys/app/app.ts"
     },
     output: {
         filename: "[name].min.js",
@@ -20,7 +20,7 @@ module.exports={
         ]
     },
     resolve: {
-        extensions: ['.ts','.js','.styl']
+        extensions: ['.ts','.js','.styl']  //模块解析
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
