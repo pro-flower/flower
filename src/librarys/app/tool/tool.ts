@@ -59,7 +59,7 @@ class Tool {
     createElement = (str: string): HTMLElement => document.createElement(str);
 
     //寻找class元素
-    getClass = (str: string): NodeList => document.getElementsByClassName(str);
+    getClass = (str: string): HTMLCollection => document.getElementsByClassName(str);
 
     //寻找id元素
     getId = (str: string): HTMLElement => document.getElementById(str);
