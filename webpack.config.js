@@ -1,7 +1,7 @@
 const webpack=require('webpack');
 module.exports={
     entry: {
-        "app":"./src/librarys/app.ts"
+        "app":"./src/librarys/app/app.ts"
     },
     output: {
         filename: "[name].min.js",
