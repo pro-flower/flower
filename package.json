@@ -4,7 +4,7 @@
   "description": "Social contact",
   "main": "index.js",
   "scripts": {
-    "webpack": "node webpack.config.js"
+    "webpack": "rimraf dist && node webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "autoprefixer": "^8.4.1",
     "css-loader": "^0.28.11",
     "postcss-loader": "^2.1.5",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
