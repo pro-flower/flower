@@ -10,8 +10,7 @@ function resolve (src) {
 module.exports = {
   // mode: 'development',//开发环境还是生产环境,决定代码是否压缩等其他功能,一般配置在命令行
   entry: {
-    'app': resolve('src/librarys/app/app.ts'),
-    'a': resolve('src/a.js')
+    'app': resolve('src/librarys/app/app.ts')
   },
   output: {
     path: resolve('dist'),
@@ -39,7 +38,7 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {//设置路径别名,js用了没事,ts用了报错
+    alias: {//设置路径别名,js用
       '@': resolve('src')
     },
     //自动解析确定的扩展,能够使用户在引入模块时不带扩展
