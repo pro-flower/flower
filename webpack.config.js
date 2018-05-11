@@ -4,7 +4,7 @@ const copyWebpackPlugin=require('copy-webpack-plugin');  //复制文件，处理
 module.exports = {
     //path.resolve拼接\解析路径专用包
     entry: {
-        "app":path.resolve(__dirname, 'src/librarys/app/app.ts')
+        "app": path.resolve(__dirname, 'src/librarys/app/app.ts')
     },
     output: {
         filename: '[name].min.js',
@@ -22,7 +22,7 @@ module.exports = {
             },
             //同一片加载器，limit=8192为阀值，小于8192字节转base编码，大于则不打包
             {
-                test:/\.(gif|jpg|png|woff|svg|eot|ttf|jpeg)\??.*$/,
+                test: /\.(gif|jpg|png|woff|svg|eot|ttf|jpeg)\??.*$/,
                 use: "url-loader?limit=8192&name=img/[hash:8].[name].[ext]"
             },
             {
@@ -37,7 +37,7 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             title: "触手可及", //用于生成的HTML文档的标题。
-            filename: __dirname+"/dist/index.html", // 生成的模板文件的名字 默认index.html
+            filename: __dirname + "/dist/index.html", // 生成的模板文件的名字 默认index.html
             template: "./src/librarys/htmltemplate/index.html", //模板来源文件
             inject: true, //注入位置'head','body',true,false
             favicon: "", //指定页面图标
@@ -58,8 +58,8 @@ module.exports = {
         new copyWebpackPlugin(
             [
                 {
-                    from:__dirname+'/src/librarys/img',
-                    to:__dirname+'/dist/img'
+                    from: __dirname + '/src/librarys/img',
+                    to: __dirname + '/dist/img'
                 }
             ]
         )
