@@ -1,4 +1,5 @@
 const path = require('path')
+const copyWebpackPlugin = require('copy-webpack-plugin')  //复制文件，处理静态资源，比如img
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
 //path.resolve拼接\解析路径专用包
@@ -25,6 +26,15 @@ module.exports = {
       {
         test: /\.styl$/,
         use: ['style-loader', 'css-loader', 'stylus-loader']
+      },
+      //同一片加载器，limit=8192为阀值，小于8192字节转base编码，大于则不打包
+      {
+        test: /\.(gif|jpg|png|woff|svg|eot|ttf|jpeg)\??.*$/,
+        use: 'url-loader?limit=8192&name=img/[hash:8].[name].[ext]'
+      },
+      {
+        test: /\.png$/,
+        use: 'file-loader?name=img/[hash:8].[name].[ext]'
       }
     ]
   },
@@ -33,7 +43,7 @@ module.exports = {
       '@': resolve('src')
     },
     //自动解析确定的扩展,能够使用户在引入模块时不带扩展
-    extensions: ['.ts', '.js', '.styl']
+    extensions: ['.ts', '.js', '.styl']  //模块解析
   },
   plugins: [
     new htmlWebpackPlugin({
@@ -54,6 +64,15 @@ module.exports = {
       chunksSortMode: 'auto', //引入模块的排序方式
       //excludeChunks: ['a', 'b'], //排除的模块,引入的除a,b模块以外的模块，与chunks相反
       xhtml: false //生成的模板文档中标签是否自动关闭，针对xhtml的语法，会要求标签都关闭，默认false
-    })
+    }),
+    //处理静态资源
+    new copyWebpackPlugin(
+      [
+        {
+          from: resolve('src/librarys/img'),
+          to: resolve('dist/img')
+        }
+      ]
+    )
   ]
 }
