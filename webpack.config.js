@@ -1,8 +1,9 @@
+//path.resolve拼接\解析路径专用包
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  //path.resolve拼接\解析路径专用包
+  // mode: 'development',//开发环境还是生产环境,决定代码是否压缩等其他功能,一般配置在命令行
   entry: {
     'app': path.resolve(__dirname, 'src/librarys/app/app.ts')
   },

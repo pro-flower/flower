@@ -4,7 +4,7 @@
   "description": "Social contact",
   "main": "index.js",
   "scripts": {
-    "start": "rimraf dist && webpack "
+    "start": "rimraf dist && webpack --mode=development"
   },
   "repository": {
     "type": "git",
