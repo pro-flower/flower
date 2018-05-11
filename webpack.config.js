@@ -1,15 +1,19 @@
-//path.resolve拼接\解析路径专用包
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+
+//path.resolve拼接\解析路径专用包
+function resolve (src) {
+  return path.resolve(__dirname, src)
+}
 
 module.exports = {
   // mode: 'development',//开发环境还是生产环境,决定代码是否压缩等其他功能,一般配置在命令行
   entry: {
-    'app': path.resolve(__dirname, 'src/librarys/app/app.ts')
+    'app': resolve('src/librarys/app/app.ts')
   },
   output: {
-    path: path.resolve(__dirname, 'dist/js'),
-    filename: '[name].min.js'
+    path: resolve('dist'),
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -25,13 +29,13 @@ module.exports = {
   },
   resolve: {
     //自动解析确定的扩展,能够使用户在引入模块时不带扩展
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js', '.styl']
   },
   plugins: [
     new htmlWebpackPlugin({
       title: '触手可及', //用于生成的HTML文档的标题。
-      filename: __dirname + '/dist/index.html', // 生成的模板文件的名字 默认index.html
-      template: './src/librarys/htmltemplate/index.html', //模板来源文件
+      filename: resolve('dist/index.html'), // 生成的模板文件的名字 默认index.html
+      template: resolve('src/librarys/htmltemplate/index.html'), //模板来源文件
       inject: true, //注入位置'head','body',true,false
       favicon: '', //指定页面图标
       minify: {
