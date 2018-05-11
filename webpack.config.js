@@ -8,10 +8,9 @@ function resolve(src) {
 }
 
 module.exports = {
-<<<<<<< HEAD
     // mode: 'development',//开发环境还是生产环境,决定代码是否压缩等其他功能,一般配置在命令行
     entry: {
-        //多出口写法，js文件夹下为html就是文件，nodeServer文件夹下为node服务
+        //多出口写法，js文件夹下为html就是文件，nodeServer文件夹下为node 服务
         'js/app': resolve('src/librarys/app/app.ts'),
         'nodeServer/app':resolve('src/restful_api/main.ts')
     },
@@ -39,40 +38,6 @@ module.exports = {
                 use: 'file-loader?name=img/[hash:8].[name].[ext]'
             }
         ]
-=======
-  // mode: 'development',//开发环境还是生产环境,决定代码是否压缩等其他功能,一般配置在命令行
-  entry: {
-    'app': resolve('src/librarys/app/app.ts')
-  },
-  output: {
-    path: resolve('dist'),
-    filename: '[name].js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader'
-      },
-      {
-        test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader']
-      },
-      //同一片加载器，limit=8192为阀值，小于8192字节转base编码，大于则不打包
-      {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf|jpeg)\??.*$/,
-        use: 'url-loader?limit=8192&name=img/[hash:8].[name].[ext]'
-      },
-      {
-        test: /\.png$/,
-        use: 'file-loader?name=img/[hash:8].[name].[ext]'
-      }
-    ]
-  },
-  resolve: {
-    alias: {//设置路径别名,js用
-      '@': resolve('src')
->>>>>>> 5bcde7651db89458064405efb82167a371f86962
     },
     resolve: {
         alias: {//设置路径别名,js用了没事,ts用了报错
